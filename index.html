@@ -44,8 +44,15 @@
       float: right;
       margin-left: 20px;
       margin-bottom: 10px;
-      width: 200px; /* adjust as needed */
+      width: 300px; /* adjust as needed */
       border-radius: 10px; /* optional: gives the image rounded corners */
+    }
+    @media (max-width: 600px) {
+      .wrap-image {
+        float: none;
+        display: block;
+        margin: 20px auto;
+      }
     }
   </style>
 </head>
@@ -63,8 +70,8 @@
   <div class="entry">
     <div class="date">March 30, 2025</div>
     <div class="text">
-      Spent 4h organizing my flat and unpacking everything I hadn't unpacked since I moved. It was a mess and took way longer than I thought but now it looks sick. Yeah, I can lock myself in here to build 24/7 😎
       <img src="assets/newsetup.png" class="wrap-image" alt="Waffle Bot">
+      Spent 4h organizing my flat and unpacking everything I hadn't unpacked since I moved. It was a mess and took way longer than I thought but now it looks sick. Yeah, I can lock myself in here to build 24/7 😎
     </div>
   </div>
   
