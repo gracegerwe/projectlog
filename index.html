@@ -62,7 +62,7 @@
   <div class="text">
       <p>I have come to believe that working in the digital realm is fun, but it is nowhere near as hard and impactful as what can be done in the physical world.</p>
       <p>Right now I’m making Waffle Bot.</p>
-      <p>I make waffles for my partner every morning. Even though all I do is take them out of the freezer, toast them, and cover them in awesome toppings, I am lazy. Waffle Bot will carry pick them up from the toaster and move them to the plate for me.</p>
+      <p>I make waffles for my partner every morning. Even though all I do is take them out of the freezer, toast them, and cover them in awesome toppings, I am lazy. Waffle Bot will pick them up from the toaster and move them to the plate for me.</p>
   </div>
   <br>
   <br>
@@ -71,8 +71,8 @@
     <div class="date">March 30, 2025</div>
     <div class="text">
       <img src="assets/newsetup.png" class="wrap-image" alt="Waffle Bot">
-      Spent 4h organizing my flat and unpacking everything I hadn't unpacked since I moved. It was a mess and took way longer than I thought but now it looks sick. Yeah, I can lock myself in here to build 24/7 😎
-      <p>Added details and entries for the last week on this site.</p>
+      Spent 4h organizing my flat and unpacking everything I hadn't unpacked since I moved. Environment makes a huge difference. It was a mess and took way longer than I thought but now it looks sick. Yeah, I can lock myself in here to build 24/7 😎
+      <p>Added details and entries for the last week on this site. Went through 3 iterations to implement proper image, bullet point and paragraph formatting. It took time to compile all of the information into the log, it will go so much faster in the future as I just update it daily.</p>
       <p>3D printed the leverage robot arm so that I could study it in real life. (It had the STL but not the STEP files so I couldn't really see what was going on.)</p>
     </div>
   </div>
@@ -80,42 +80,47 @@
   <div class="entry">
     <div class="date">March 29, 2025</div>
     <div class="text">
-      Most of the day was spent debugging servo connection to the Raspberry Pi. After battling with improper grounding, dead or zombie servos, power starvation and weak jumper wires, I was able to wire a DC power supply to the servos that survived (RIP 4 HS-311s that I probably broke by twisting them around too much during assembly). 
-      Now I know how to diagnose low/no current draw conditions, debug power delivery with a bench supply, PWM logic and signal grounding. 
-      But even with a few servos working with the extra power supply, they were still too weak to move the arm. I spent the rest of the evening looking at other robot models to base my redesign off of. I <a href="https://www.youtube.com/watch?v=lzpDfuEe7JU" target="_blank" rel="noopener noreferrer">found one</a> that uses servos at the base + a lot of leverage, and decided to use that one as my example for v2.
-      I designed servo hats for MG995s, two versions of a v2 arm component, and 1 version of the v2 base.
+      Most of the day was spent debugging servo connection to the Raspberry Pi. After battling with improper grounding, dead or zombie servos, power starvation and weak jumper wires, I was able to wire a DC power supply to the servos that survived (RIP 4 HS-311s that I probably broke by twisting them around too much during assembly). Now I know how to diagnose low/no current draw conditions, debug power delivery with a bench supply, PWM logic and signal grounding.</p>
+      <p>Even with a few servos working with the extra power supply, they were still too weak to move the arm. I spent the rest of the evening looking at other robot models to base my redesign off of. I <a href="https://www.youtube.com/watch?v=lzpDfuEe7JU" target="_blank" rel="noopener noreferrer">found one</a> that uses servos at the base + a lot of leverage, and decided to use that one as my example for v2.</p>
+      <p>I designed servo hats for MG995s, two versions of a v2 arm component, and 1 version of the v2 base.</p>
     </div>
   </div>
 
   <div class="entry">
     <div class="date">March 28, 2025</div>
     <div class="text">
-      Finished first full version of the WaffleBot, connected it to the Raspberry Pi, and found that the HS-311 servos did not have enough torque / arm was too heavy so they couldn't lift it up properly.
-      Also spent 3.5h in the morning at a contract manufacturer seeing every step of the PCBA process, including BOM, procurement, SMT assembly, stencil printing, pick-and-place, ovens longer than my bedroom, through-hole, optical inspection and more.
-      This CM sets themselves apart by always shipping their products on time and having a rework rate of <0.1%. For reference, most CMs have rework rates in the mid-double digits and are regularly 6-8 weeks late. The guys I visited are of the highest caliber.
-      Their trick is to have tests and checks at every single step of the process. It is actually not adding more work - it saves time and money by catching mistakes as early as possible. 
-      My host had been brought in to increase efficiency of the factory by automating as much as possible. I haven't met anyone with more integrity or craft. He carefully explained to me the parts of the process that need to be done by hand, and others that could be automated. He let me sit in on meetings where he trained his team and developed software towards these goals. The most curious thing I noticed was that he always asked how much time something took, and his employees responded down to the minute, usually between 2-15.
+      Finished first full version of the WaffleBot, assembled and connected it to the Raspberry Pi, and found that the HS-311 servos did not have enough torque / arm was too heavy so they couldn't lift it up properly.
+      <p>Also spent 3.5h in the morning at a contract manufacturer seeing every step of the PCBA process, including BOM, procurement, SMT assembly, stencil printing, pick-and-place, ovens longer than my bedroom, through-hole, optical inspection and more.</p>
+      <p>This CM sets themselves apart by always shipping their products on time and having a rework rate of <0.1%. For reference, most CMs have rework rates in the mid-double digits and are regularly 6-8 weeks late. The guys I visited are of the highest caliber.</p>
+      <p>Their trick is to have tests and checks at every single step of the process. It is actually not adding more work - it saves time and money by catching mistakes as early as possible.</p>
+      <p>My host had been brought in to increase efficiency of the factory by automating as much as possible. I haven't met anyone with more integrity or craft. He carefully explained to me the parts of the process that need to be done by hand, and others that could be automated. He let me sit in on meetings where he trained his team and developed software towards these goals. The most curious thing I noticed was that he always asked how much time something took, and his employees responded down to the minute, usually between 2-15.</p>
     </div>
   </div>
 
   <div class="entry">
     <div class="date">March 27, 2025</div>
     <div class="text">
-      Built v2 of the Waffle Bot base, this time not just a cubic block of PLA with a rough hole in it (lol) but one properly optimized for sturdiness, attachment to the servo and quick 3d printing.
+      Found a different gripper online, 3D printed and assembled it, designed the wrist joint and mount that it would attach to.
+      <p>Discovered the mirror tool in CAD which makes my 2D drawings so much faster.</p>
     </div>
   </div>
 
   <div class="entry">
     <div class="date">March 26, 2025</div>
     <div class="text">
-      Ordered some components for experimentation. 
+      Ordered additional M1 screws for horns and sticky soles that I can add to the robot base to make it even sturdier. 
+      <p>Am finding locking a bit difficult. So far am designing all of the components with holes for screws and manually screwing them in with hex nuts on the other side, but sometimes the parts are so small that it gets inconvenient to attach them. Don't quite understand yet how to drop a lock nut into a print / make threaded inserts, but I don't think I'll need that for this version.</p>
+      <p>Designed and added the first part of the arm to the assembly.</p>
+      <p>Also designed the elbow and second arm part.</p>
     </div>
   </div>
 
   <div class="entry">
     <div class="date">March 25, 2025</div>
     <div class="text">
-      Spent the day researching potentiometers and how to read them with microcontrollers. 
+      Learned how to design parts in context and import STEP files of specific components from the internet. Also learned fasten/revolute mates and made my first assembly. 
+      <p>Learned how to make holes in CAD. Game changer.</p>
+      <p>Built v2 of the Waffle Bot base, this time not just a cubic block of PLA with a rectangular cavity in it (lol) but one properly optimized for sturdiness, attachment to the servo and quick 3d printing. Also designed my own servo horns because I didn't have small enough screws for the ones that came with my servos. Went through 3 versions. Was able to create ridges that attached onto the servo perfectly.</p>
     </div>
   </div>
 
