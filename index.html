@@ -72,20 +72,29 @@
     <div class="text">
       <img src="assets/newsetup.png" class="wrap-image" alt="Waffle Bot">
       Spent 4h organizing my flat and unpacking everything I hadn't unpacked since I moved. It was a mess and took way longer than I thought but now it looks sick. Yeah, I can lock myself in here to build 24/7 😎
+      Added details and entries for the last week on this site. 
+      3D printed the leverage robot arm so that I could study it in real life. (It had the STL but not the STEP files so I couldn't really see what was going on.)
     </div>
   </div>
   
   <div class="entry">
     <div class="date">March 29, 2025</div>
     <div class="text">
-      Figured out how to wire a DC power supply to give servos more of a boost and found out that I killed 4 HS-311s while building Waffle Bot v1.   
+      Most of the day was spent debugging servo connection to the Raspberry Pi. After battling with improper grounding, dead or zombie servos, power starvation and weak jumper wires, I was able to wire a DC power supply to the servos that survived (RIP 4 HS-311s that I probably broke by twisting them around too much during assembly). 
+      Now I know how to diagnose low/no current draw conditions, debug power delivery with a bench supply, PWM logic and signal grounding. 
+      But even with a few servos working with the extra power supply, they were still too weak to move the arm. I spent the rest of the evening looking at other robot models to base my redesign off of. I <a href="https://www.youtube.com/watch?v=lzpDfuEe7JU" target="_blank" rel="noopener noreferrer">found one</a> that uses servos at the base + a lot of leverage, and decided to use that one as my example for v2.
+      I designed servo hats for MG995s, two versions of a v2 arm component, and 1 version of the v2 base.
     </div>
   </div>
 
   <div class="entry">
     <div class="date">March 28, 2025</div>
     <div class="text">
-      Finished first full version of the WaffleBot, connected it to the Raspberry Pi, and found that the HS-311 servos did not have enough torque / arm was too heavy so they couldn't lift it up properly. Also spent 3.5h in the morning at a contract manufacturer seeing every step of the PCBA process.
+      Finished first full version of the WaffleBot, connected it to the Raspberry Pi, and found that the HS-311 servos did not have enough torque / arm was too heavy so they couldn't lift it up properly.
+      Also spent 3.5h in the morning at a contract manufacturer seeing every step of the PCBA process, including BOM, procurement, SMT assembly, stencil printing, pick-and-place, ovens longer than my bedroom, through-hole, optical inspection and more.
+      This CM sets themselves apart by always shipping their products on time and having a rework rate of <0.1%. For reference, most CMs have rework rates in the mid-double digits and are regularly 6-8 weeks late. The guys I visited are of the highest caliber.
+      Their trick is to have tests and checks at every single step of the process. It is actually not adding more work - it saves time and money by catching mistakes as early as possible. 
+      My host had been brought in to increase efficiency of the factory by automating as much as possible. I haven't met anyone with more integrity or craft. He carefully explained to me the parts of the process that need to be done by hand, and others that could be automated. He let me sit in on meetings where he trained his team and developed software towards these goals. The most curious thing I noticed was that he always asked how much time something took, and his employees responded down to the minute, usually between 2-15.
     </div>
   </div>
 
@@ -113,21 +122,15 @@
   <div class="entry">
     <div class="date">March 24, 2025</div>
     <div class="text">
-      Decided I want to build more physical projects. Digital stuff is fun, but it's nowhere near as hard and impactful as physical things. 
-    </div>
-  </div>
-
-  <div class="entry">
-    <div class="date">March 23, 2025</div>
-    <div class="text">
-      Decided I want to build more physical projects. Digital stuff is fun, but it's nowhere near as hard and impactful as physical things. 
+      I had pain in my hip which turned out to be a torn labrum so I spent the last few days in the hospital / battling with insurance / getting ortho advice / recovering. So the last few days are blank but now I'm back!
+      Sketched out how Waffle Bot needs to look like and made some measurements relative to the size of the toaster and a waffle. Realized 3DOF will make it very hard for Waffle Bot to pick up waffles so I started working on a 5 DOF design.
     </div>
   </div>
 
   <div class="entry">
     <div class="date">March 18, 2025</div>
     <div class="text">
-      Read up on DOF and studied how others have built their robots. 
+      Read up on DOF and studied how others have built their robots. I decided I want to start as simple as possible with 3 DOF.
     </div>
   </div>
 
