@@ -81,7 +81,9 @@
     <div class="text">
       Set up GitHub repo structure (<code>models/</code>, <code>src/</code>, <code>main.cpp</code>, <code>bin/</code>, etc). Installed CMake and wrote <code>CMakeLists.txt</code> file.
       <p>Learned about different compilers (Clang, GCC, Visual Studio) and configured Clang because I use Mac, it’s preinstalled, will produce faster & more optimized binaries, and has better diagnostics (error & warning messages).</p>
-      <p>Spent a loooong time trying to solve a bug wherein the com </p>
+      <p>Spent a loooong time trying to solve a bug wherein the compiler couldn't find OpenCascade header files (specifically gp_Pnt.hxx). </p>
+      <p>Some approaches I took were: verifying that files existed, manually setting the include and library paths, reconfiguring VSCode IntelliSense, rewriting the .json files, adding fallback include paths, testing manual compilation, etc.</p>
+      <p>What ended up working was changing the include statement in the <code>main.cpp/</code> file and 
     </div>
   </div>
 
