@@ -99,7 +99,13 @@
     <div class="date">April 2, 2025</div>
     <div class="text">
       Got totally nerd sniped and spent the morning rewriting my personal website. Looks simpler, cleaner, with more accurate information.
-       <p>Then worked on continuing to set up the C++ computational geometry libraries that I want. Tried redownloading different parts of the entire OpenCascade library multiple times before realizing the problem I was having was that I just needed to update the name of one of the libraries in my codebase.  regarding the compiler not being able to find a specific library.</p> 
+      <p>Afternoon was a looooong debugging session. Main goal was to continue to set up the C++ computational geometry libraries that I want. Went through quite a few problems.</p>
+      <p>First I realized that the OpenCascade version I'd installed from homebrew didn't have the libraries I needed. So I uninstalled that version and had to rebuild the geometry engine from the source.</p>
+      <p>Downloading OpenCascade from the website from 2.5GB, so I first tried to download only the parts of it that I needed to support CAD/CAM/GD&T logic but leave out a GUI, OpenGL, viewers and doc system that would take up uneccessary space.</p>
+      <p>The build succeeded, but when I ran <code>make install</code> it failed midway because it expected FreeType headers (for GUI/fonts), which weren’t installed. So I deleted the build and started over with more specific CMake instructions to specifically avoid that.</p>
+      <p>Then, once <code>make install</code> worked, I was still getting IntelliSense VSCode errors, and tried multiple things to troubleshoot the C++ add on, even creating an additional <code>.json</code> file.</p> 
+      <p>Then I accidentaly ran <code>rm -rf</code> on not just the build folder but the entire project github repo and deleted everything like an idiot. And I hadn't pushed it.
+      <p>So I had to rewrite everything, & then I had different errors with VSCode not finding specific libraries (<code>TKSTEP</code> especially). What came next was 3 more times of deleting and redownloading OpenCascade from the OG repo, each time downloading more of it until I downloaded the entire 2.5GB file. But even once I did that, it still couldn't find <code>TKSTEP</code>. I tried compiling with TKDESTEP instead and it worked.</p> 
     </div>
    </div>
 
