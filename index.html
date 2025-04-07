@@ -78,6 +78,7 @@
   <div class="entry">
     <div class="date">April 7, 2025</div>
     <div class="text">
+      <source src="assets/v1.mp4" type="video/mp4">
       I got the visualizer to build properly! The stream of errors was caused by <code>Cocoa_Window</code> needing objective C. Instead of incorporating that into my build and cluttering it all over again, I decided to just switch to <code>Open_GL</code> and Qt's native window that's already directly supported by OOCT.
       <p>Once I made that switch, then it was just missing symbol and class redefinition errors. Had to add a few headers, reconfigure the CMake a bit to include Qt6 libraries, updated inheritance across files, and then... could buil, but got a runtime crash.</p>
       <p>The app crashed on launch, even though it build and linked, because <code>viewer->loadSTEP()</code> was called in the constructor before <code>OpenGL</code> was ready, so <code>context</code> was still <code>nullptr</code>. Just had to delay <code>loadSTEP()</code>.</p>
