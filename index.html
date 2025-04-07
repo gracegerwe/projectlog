@@ -83,6 +83,9 @@
       <p>The main issue turned out to be goofball MacOS sandboxing my terminal & VSCode, aka not giving it permission to access my Downloads. Just had to change my settings and... voila! 1 solid, 1 shell, 61 faces, 168 edges and 112 vertices :)</p>
       <p>After that it was very easy to analyze full shape hierarchies, create a new <code>struct</code>, find feature locations in 3D space, clean up the CLI (command line interface) output, and begin to generate CAM operations based on feature characteristics.</p>
       <p>Some of the classes/enums I used were <code>BrepAdaptor_Surface</code>, <code>TopExp_Explorer</code>, <code>TopAbs_FACE</code>, <code>TopoDS_Shape</code>, <code>GeomAbs_SurfaceType</code>, <code>UVBounds()</code> and <code>.Value(u, v)</code>.</p>
+      <p>THEN I decided I needed something a bit harder and got started on a visualizer - a 3D application layer so that I could render and see the toolpath, not just output lines on my terminal.</p>
+      <p>Initial setup was pretty easy, I installed Qt via Homebrew and linked it with OOCT in my CMake file. I also added logic for two different executables, and additional .cpp and .hpp files to support the new popup screen. But then again I had to wrestle with quite a few errors.</p>
+      <p>Specifically, <code>WNT_Window</code> was Windows only and it broke the build on my MacOS. <code>Cocoa_Window(disp, winID)</code> gave constructor mismatch, so I tried multiple things, like changing it to <code>NSView</code> and using <code>Aspect_Window</code>. I was able to solve this error, but was getting a stream of symbols instead of a proper build.</p>
     </div>
    </div>
 
