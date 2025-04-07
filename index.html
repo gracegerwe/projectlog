@@ -72,7 +72,7 @@
       <p>I have come to believe that working in the digital realm is fun, but it is nowhere near as hard and impactful as what can be done in the physical world.</p>
       <p>Right now I’m working on two projects. One of them is Waffle Bot.</p>
       <p>I make waffles for my partner every morning. Even though all I do is take them out of the freezer, toast them, and cover them in awesome toppings, I am lazy. Waffle Bot will pick them up from the toaster and move them to the plate for me.</p>
-      <p>The second is <a href="https://github.com/gracegerwe/cam" target="_blank" rel="noopener noreferrer">building manufacturing workflows</a> in C++.</p>
+      <p>The second is building manufacturing <a href="https://github.com/gracegerwe/cam" target="_blank" rel="noopener noreferrer">workflows</a> in C++.</p>
       <br>
   </div>
 
@@ -84,7 +84,7 @@
         Your browser does not support the video tag.
       </video>
       I got the visualizer to build properly! The stream of errors was caused by <code>Cocoa_Window</code> needing objective C. Instead of incorporating that into my build and cluttering it all over again, I decided to just switch to <code>Open_GL</code> and Qt's native window that's already directly supported by OOCT.
-      <p>Once I made that switch, then it was just missing symbol and class redefinition errors. Had to add a few headers, reconfigure the CMake a bit to include Qt6 libraries, updated inheritance across files, and then... could buil, but got a runtime crash.</p>
+      <p>Once I made that switch, then it was just missing symbol and class redefinition errors. Had to add a few headers, reconfigure the CMake a bit to include Qt6 libraries, updated inheritance across files, and then... could build, but got a runtime crash.</p>
       <p>The app crashed on launch, even though it built and linked, because <code>viewer->loadSTEP()</code> was called in the constructor before <code>OpenGL</code> was ready, so <code>context</code> was still <code>nullptr</code>. Just had to delay <code>loadSTEP()</code>.</p>
       <p>After some final cleanup, it builds and shows a black popup. When I expand or shrink the window with my mouse, you can see the STEP file inside - otherwise, the screen is black. But it's getting closer! Yay!</p>
     </div>
