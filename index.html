@@ -75,6 +75,18 @@
   </div>
 
   <div class="entry">
+    <div class="date">April 6, 2025</div>
+    <div class="text">
+      Today I got feature extraction working from real STEP files and set up CAM toolpath logic! Below is the breakdown of the steps (pun intended). 
+      <p>First learned how STEP files are set up and the type of information that's in them: everything is written in EXPRESS, and each line starts with a # and a number, and refers to a piece of information about the object (a line, surface, hole, etc). Basically, information on each component and how they are meant to be assembled together.</p>
+      <p>It took me quite a while to be able to read STEP files properly. Ran into mainly compiler issues, trying to read source files as executables, for example. (Source code is the human-readable instructions written in a programming language like C++, while an executable is the machine-readable program created by compiling that source code so the computer can run it.)</p>
+      <p>The main issue turned out to be goofball MacOS sandboxing my terminal & VSCode, aka not giving it permission to access my Downloads. Just had to change my settings and... voila! 1 solid, 1 shell, 61 faces, 168 edges and 112 vertices :)</p>
+      <p>After that it was very easy to analyze full shape hierarchies, create a new <code>struct</code>, find feature locations in 3D space, clean up the CLI (command line interface) output, and begin to generate CAM operations based on feature characteristics.</p>
+      <p>Some of the classes/enums I used were <code>BrepAdaptor_Surface</code>, <code>TopExp_Explorer</code>, <code>TopAbs_FACE</code>, <code>TopoDS_Shape</code>, <code>GeomAbs_SurfaceType</code>, <code>UVBounds()</code> and <code>.Value(u, v)</code>.</p>
+    </div>
+   </div>
+
+  <div class="entry">
     <div class="date">April 5, 2025</div>
     <div class="text">
       Was extremely jet lagged as I hadn't really slept in 48h. Slept pretty much the entire day.  
