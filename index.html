@@ -83,7 +83,8 @@
         <source src="assets/v1.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-      I got the visualizer to build properly! The stream of errors was caused by <code>Cocoa_Window</code> needing objective C. Instead of incorporating that into my build and cluttering it all over again, I decided to just switch to <code>Open_GL</code> and Qt's native window that's already directly supported by OOCT.
+      I got the visualizer to build properly! The stream of errors was caused by <code>Cocoa_Window</code> needing objective C. Instead of incorporating that into my build and cluttering it all over again, I decided to just switch to <code>Open_GL</code> and Qt's native window that's already directly supported by OCCT
+      CT.
       <p>Once I made that switch, then it was just missing symbol and class redefinition errors. Had to add a few headers, reconfigure the CMake a bit to include Qt6 libraries, updated inheritance across files, and then... could build, but got a runtime crash.</p>
       <p>The app crashed on launch, even though it built and linked, because <code>viewer->loadSTEP()</code> was called in the constructor before <code>OpenGL</code> was ready, so <code>context</code> was still <code>nullptr</code>. Just had to delay <code>loadSTEP()</code>.</p>
       <p>After some final cleanup, it builds and shows a black popup. When I expand or shrink the window with my mouse, you can see the STEP file inside - otherwise, the screen is black. But it's getting closer! Yay!</p>
@@ -101,7 +102,7 @@
       <p>After that it was very easy to analyze full shape hierarchies, create a new <code>struct</code>, find feature locations in 3D space, clean up the CLI (command line interface) output, and begin to generate CAM operations based on feature characteristics.</p>
       <p>Some of the classes/enums I used were <code>BrepAdaptor_Surface</code>, <code>TopExp_Explorer</code>, <code>TopAbs_FACE</code>, <code>TopoDS_Shape</code>, <code>GeomAbs_SurfaceType</code>, <code>UVBounds()</code> and <code>.Value(u, v)</code>.</p>
       <p>THEN I decided I needed something a bit harder and got started on a visualizer - a 3D application layer so that I could render and see the toolpath, not just output lines on my terminal.</p>
-      <p>Initial setup was pretty easy, I installed Qt via Homebrew and linked it with OOCT in my CMake file. I also added logic for two different executables, and additional .cpp and .hpp files to support the new popup screen. But then again I had to wrestle with quite a few errors.</p>
+      <p>Initial setup was pretty easy, I installed Qt via Homebrew and linked it with OCCT in my CMake file. I also added logic for two different executables, and additional .cpp and .hpp files to support the new popup screen. But then again I had to wrestle with quite a few errors.</p>
       <p>Specifically, <code>WNT_Window</code> was Windows only and it broke the build on my MacOS. <code>Cocoa_Window(disp, winID)</code> gave constructor mismatch, so I tried multiple things, like changing it to <code>NSView</code> and using <code>Aspect_Window</code>. I was able to solve this error, but was getting a stream of symbols instead of a proper build.</p>
     </div>
    </div>
