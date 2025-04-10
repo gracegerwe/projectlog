@@ -80,6 +80,10 @@
   <div class="entry">
     <div class="date">April 10, 2025</div>
     <div class="text">
+      <video controls loop class="wrap-video">
+        <source src="assets/eigen_step.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
       Today I built a tool to simulate CMM flatness probing using least squares plane fitting and point sampling from STEP geometry — visualized in MeshLab. 
       <p>Woo! Many fancy words! Let's break it down.</p> 
       <p>The program loads a STEP file, finds faces, samples points on that face as if it were a probe, calculates a deviation, and then exports a report explaining whether the surfaces was within the allowable deviation or not (pass/fail). That is what you do in CMM tolerancing. The program also exports a <code>.ply</code> that you can visualize! So you can see it! With your eyes!</p> 
