@@ -78,6 +78,22 @@
   </div>
 
   <div class="entry">
+    <div class="date">April 10, 2025</div>
+    <div class="text">
+      Today I built a tool to simulate CMM flatness probing using least squares plane fitting and point sampling from STEP geometry — visualized in MeshLab. 
+      <p>Woo! Many fancy words! Let's break it down.</p> 
+      <p>The program loads a STEP file, finds faces, samples points on that face as if it were a probe, calculates a deviation, and then exports a report explaining whether the surfaces was within the allowable deviation or not (pass/fail). That is what you do in CMM tolerancing. The program also exports a <code>.ply</code> that you can visualize! So you can see it! With your eyes!</p> 
+      <p>This time I started extremely simple and then built up, rather than make the mistakes of the dreaded black screen visualizer where I went too complex.</p>
+      <p>First we set up CMake to use my local OCCT build. Had some minor compile errors but they were a super quick fix as I've had them before.</p>
+      <p>Then we loaded my trusty Servo Horn STEP file, downloaded & set up MeshLab. Initial script was literally: find one surface, put a neat 10x10 grid of probes on it in a defined bounding box, and give it a position on a 3D plane.</p>
+      <p>Once that worked and I confirmed the STEP loaded, sampling worked, and the file exported well, then I included a feature that doesn't just pick a rectangular bounding box on a flat surface but actually correctly probes across that entire surface, showing its true shape.</p>
+      <p>Then, I added a loop that went through every single surface on the file, took the 5 biggest ones based on surface area, and exported all of those at the same time into MeshLab. That way I could visualize the actual servo horn.</p>
+      <p>Finally, once I had that, I incorporated <code>eigen</code> math to fit a best-fit plane for the 5 biggest faces, computed their deviations and color-coded them, green = pass, red = fail.</p>
+      <p>And voila! A real CMM tool built from scratch in one day.</p>
+    </div>
+   </div>
+
+  <div class="entry">
     <div class="date">April 9, 2025</div>
     <div class="text">
       Decided to try a different visualizer tool & <a href="https://gracegerwe.com/step_visualizer/" target="_blank" rel="noopener noreferrer">succeeded in building it</a>!! Even if I fixed the black screen bug, MacOs is not easily integrated with Qt and OCCT. For that black screen problem, a number of things could have been wrong.
