@@ -126,7 +126,7 @@
     <div class="text">
       Decided to try a different visualizer tool & <a href="https://gracegerwe.com/step_visualizer/" target="_blank" rel="noopener noreferrer">succeeded in building it</a>!! Even if I fixed the black screen bug, MacOs is not easily integrated with Qt and OCCT. For that black screen problem, a number of things could have been wrong.
       <p>For example perhaps <code>initializeGL()</code> was happening too early, a mistake that happens when the valid handle is returned only after the native widget is created.</p>
-      <p>Or, the viewer never actually attaches to a real OpenGL surface and is just rendering to an offscreen buffer, then blitsing to the screen, whereas OCCT assumes it's rendering directly to a native wiindow, causing the redraw not to show.</p> 
+      <p>Or, the viewer never actually attaches to a real OpenGL surface and is just rendering to an offscreen buffer, then blitsing to the screen, whereas OCCT assumes it's rendering directly to a native window, causing the redraw not to show.</p> 
       <p>Either way, I found a repo online called Foxtrot and decided to use that instead. Downloaded and configured Rust, spent some time trying to figure out how to deploy the library onto Github.</p> 
       <p>First tried using GitHub pages, got bogged down, then tried CloudFlare, which was also acting up, and then I went back to square 1 and thought: what is the easiest possible thing I could do?</p> 
       <p>That thing turned out to be directly deploying the Web app on my computer (aka creating a Docs folder and copying all of the Wasm folder into there) and then pushing it to GitHub.</p>
